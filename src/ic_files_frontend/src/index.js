@@ -1,4 +1,5 @@
 import { ic_files_backend } from "../../declarations/ic_files_backend";
+import React from "react";
 
 document.querySelector("form").addEventListener("submit", async (e) => {
   e.preventDefault();

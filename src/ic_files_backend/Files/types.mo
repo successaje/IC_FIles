@@ -13,12 +13,18 @@ module{
         editable : Bool;
         sharedWith : [User];
         encrypted : Bool;
-        accessible : Bool;
+        accessible : AccessType;
     };
 
     public type AccessType = {
-        ReadOnly : Bool;
-        ReadWrite : Bool;
+        #ReadOnly;
+        #ReadWrite;
+    };
+
+    public type AccessPrivilege = {
+        fileId: Nat;
+        accessType: AccessType;
+        expirationDate: Int;  // Time
     };
 
     public type FileMeta = {
@@ -29,6 +35,6 @@ module{
         fileSize : Nat;
         createdAt : Int;
         fileHash : Text;
-
-    }
+    };
+    
 }
