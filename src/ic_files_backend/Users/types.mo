@@ -1,5 +1,9 @@
 module {
 
+    public type State = {
+
+    };
+
     public type Profile__init__ = {
         identity : Principal;
         userName : Text;

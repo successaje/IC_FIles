@@ -1,5 +1,10 @@
 module{
 
+    public type State = {
+        caller : Principal;
+        
+    };
+
     public type User = Text;
 
     public type InitFile = {
@@ -36,5 +41,5 @@ module{
         createdAt : Int;
         fileHash : Text;
     };
-    
+
 }
