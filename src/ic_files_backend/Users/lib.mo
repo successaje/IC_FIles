@@ -28,7 +28,7 @@ module {
         private func Verifier(userName : Text, email : Text) : Bool {
             var unique = true;
             for ((i, j) in Profile__hash__.entries()) {
-                if (j.userName == username and j.email == email) {
+                if (j.userName == userName and j.email == email) {
                     unique := false;
                 };
             };
@@ -36,21 +36,21 @@ module {
         };
 
 
-        public func __init__(caller : Principal, userName : Text, name : Text, email : Text) : Result.Result<Text, Text> {
-            if (Verifier(userName, email) == false){
-                #err("This username or email exists!")
-            } else {
-                Profile__hash__.put(caller , {
-                    caller;
-                    userName;
-                    name;
-                    email;
-                    Time.now();
-                    [];
-                });
-                #ok("You have created an account successfully");
-            }
+        // public func __init__(caller : Principal, userName : Text, name : Text, email : Text) : Result.Result<Text, Text> {
+        //     if (Verifier(userName, email) == false){
+        //         #err("This username or email exists!")
+        //     } else {
+        //         Profile__hash__.put(caller , {
+        //             caller;
+        //             userName;
+        //             name;
+        //             email;
+        //             Time.now();
+        //             [];
+        //         });
+        //         #ok("You have created an account successfully");
+        //     }
            
-        }
+        // };
     };
 };
