@@ -1,7 +1,7 @@
 module {
 
     public type State = {
-
+        
     };
 
     public type Profile__init__ = {
