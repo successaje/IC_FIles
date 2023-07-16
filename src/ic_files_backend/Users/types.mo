@@ -1,3 +1,4 @@
+import Int "mo:base/Int";
 module {
 
     public type State = {
@@ -11,7 +12,7 @@ module {
         email   : Text;
         createdAt : Int;
         access_priviledges : [Text];
-    }
+    };
 
 //     module {
 
