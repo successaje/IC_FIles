@@ -1,18 +1,13 @@
-// pub fn add(left: usize, right: usize) -> usize {
-//     left + right
-// }
+use ic_cdk_macros::*;
+use ic_cdk::export::candid;
+#[import(canister = "ic_files_backend")]
 
-// #[cfg(test)]
-// mod tests {
-//     use super::*;
+struct CounterCanister;
 
-//     #[test]
-//     fn it_works() {
-//         let result = add(2, 2);
-//         assert_eq!(result, 4);
-//     }
-// }
-
+[#update]
+async fn read() -> candid::Nat {
+    CounterCanister::read().await.0
+}
 
 #[ic_cdk::query]
 fn greet(name: String) -> String {

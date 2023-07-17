@@ -1,6 +1,7 @@
 service: {
-    "retrieve": (text) -> (vec nat8) query;
-    "store": (text, vec nat8) -> ();
+    // "retrieve": (text) -> (vec nat8) query;
+    // "store": (text, vec nat8) -> ();
 
-    "add_user": (principal) -> ();
+    // "add_user": (principal) -> ();
+    "greet":(text) -> (text) query;
 }
