@@ -1,0 +1,19 @@
+[package]
+name = "ic_files"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["cdylib"]
+
+[workspace]
+members = [
+    "src/ic_files",
+]
+
+[dependencies]
+candid = "0.8.2"
+ic_cdk = "0.6.2"
+ic_cdk_macros = "0.6.0"

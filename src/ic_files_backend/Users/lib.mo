@@ -1,6 +1,7 @@
 import Types "types";
 
 import HashMap "mo:base/HashMap";
+import Int "mo:base/Int";
 import Principal "mo:base/Principal";
 import Result "mo:base/Result";
 import Time "mo:base/Time";
@@ -35,6 +36,16 @@ module {
             unique;
         };
 
+        // public func __brew__(caller : Principal, userName : Text, name : Text, email : Text) : Types.Profile__init__ {
+        //     {
+        //         caller;
+        //         userName;
+        //         name;
+        //         email;
+        //         34;
+        //         [];
+        //     };
+        // };
 
         // public func __init__(caller : Principal, userName : Text, name : Text, email : Text) : Result.Result<Text, Text> {
         //     if (Verifier(userName, email) == false){
@@ -45,7 +56,7 @@ module {
         //             userName;
         //             name;
         //             email;
-        //             Time.now();
+        //             34;//Time.now();
         //             [];
         //         });
         //         #ok("You have created an account successfully");
