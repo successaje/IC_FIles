@@ -4,6 +4,14 @@
       "main": "src/ic_files_backend/main.mo",
       "type": "motoko"
     },
+    "ic_files": {
+      "candid": "src/ic_files/can.did",
+      "package": "ic_files",
+      "type": "rust",
+      "dependencies": [
+        "ic_files_backend"
+      ]
+    },
     "ic_files_frontend": {
       "dependencies": [
         "ic_files_backend"

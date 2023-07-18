@@ -4,4 +4,5 @@ service: {
 
     // "add_user": (principal) -> ();
     "greet":(text) -> (text) query;
+    "read":() -> (nat);
 }

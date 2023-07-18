@@ -11,7 +11,7 @@ crate-type = ["cdylib"]
 [workspace]
 
 members = [
-    "",
+    "src/ic_files",
 ]
 
 [dependencies]
