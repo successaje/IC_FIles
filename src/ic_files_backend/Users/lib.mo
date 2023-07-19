@@ -3,6 +3,7 @@ import Types "types";
 import HashMap "mo:base/HashMap";
 import Int "mo:base/Int";
 import Principal "mo:base/Principal";
+import Nat "mo:base/Nat";
 import Result "mo:base/Result";
 import Time "mo:base/Time";
 
@@ -36,16 +37,16 @@ module {
             unique;
         };
 
-        // public func __brew__(caller : Principal, userName : Text, name : Text, email : Text) : Types.Profile__init__ {
-        //     {
-        //         caller;
-        //         userName;
-        //         name;
-        //         email;
-        //         34;
-        //         [];
-        //     };
-        // };
+        public func __brew__(identity : Principal, userName : Text, name : Text, email : Text, createdAt : Int, access_priviledges : [Text]) : Types.Profile__init__ {
+            {
+                identity;
+                userName;
+                name;
+                email;
+                createdAt;
+                access_priviledges;
+            };
+        };
 
         // public func __init__(caller : Principal, userName : Text, name : Text, email : Text) : Result.Result<Text, Text> {
         //     if (Verifier(userName, email) == false){
