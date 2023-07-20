@@ -48,21 +48,14 @@ module {
             };
         };
 
-        // public func __init__(caller : Principal, userName : Text, name : Text, email : Text) : Result.Result<Text, Text> {
-        //     if (Verifier(userName, email) == false){
-        //         #err("This username or email exists!")
-        //     } else {
-        //         Profile__hash__.put(caller , {
-        //             caller;
-        //             userName;
-        //             name;
-        //             email;
-        //             34;//Time.now();
-        //             [];
-        //         });
-        //         #ok("You have created an account successfully");
-        //     }
-           
-        // };
+        public func __init__(caller : Principal, userName : Text, name : Text, email : Text) : Result.Result<Text, Text> {
+            if (Verifier(userName, email) == false){
+                #err("This username or email exists!")
+            } else {
+                var time : Int = Time.now();
+                Profile__hash__.put(caller , __brew__(caller, userName, name, email, Time.now(), []));
+                #ok("You have created an account successfully");
+            }
+        };
     };
 };
