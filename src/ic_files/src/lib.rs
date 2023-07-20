@@ -4,6 +4,9 @@ use ic_cdk::export::Principal;
 #[import(canister = "ic_files_backend")]
 
 use std::collections::{HashMap, HashSet};
+use std::cell::RefCell;
+
+use types::*;
 
 struct CounterCanister;
 
@@ -15,30 +18,42 @@ async fn read() -> candid::Nat {
 mod types {
 
     use super::*;
+
     #[derive(CandidType, Deserialize)]
     pub struct InitProfile {
         pub name : Option<String>,
         pub identity : Option<Principal>,
         pub username : Option<String>,
         pub email : Option<String>,
-        pub created_at : Option<i64>,
-        pub access_priviledges : Option<[String]>
+        pub created_at : Option<u64>,
+        pub access_priviledges : Vec<String>
     }
 
     #[derive(CandidType, Default, Deserialize)]
     pub struct InitFile = {
-        pub name : Option<String>;
-        pub owner : Principal;
-        pub user : Option<String>;
-        pub filesize : Nat; // in MB
-        pub filetype : Option<String>;
-        pub folder : Option<String>;
-        pub edited : bool;
-        pub editable : bool;
-        pub sharedwith : [User];
-        pub encrypted : bool;
-        pub accessible : AccessType;
+        pub name : Option<String>,
+        pub owner : Principal,
+        pub user : Option<String>,
+        pub filesize : Nat, // in MB
+        pub filetype : Option<String>,
+        pub folder : Option<String>,
+        pub edited : bool,
+        pub editable : bool,
+        pub sharedwith : Vec<User>,
+        pub encrypted : bool,
+        pub accessible : AccessType,
     };
+
+    #[derive(CandidType, Default、Deserialize)]
+    pub struct FileMeta = {
+        pub id : String,
+        pub user : User,
+        pub name : String,
+        pub shared_with : Vec<User>,
+        pub file_size : Nat,
+        pub created_at : Int,
+        pub file_hash : String,
+    }
 
     pub type User = String;
 
@@ -47,6 +62,30 @@ mod types {
         ReadOnly,
         ReadWrite,
     };
+
+    #[derive(CandidType, Default, Deserialize)]
+    pub struct AccessPriviledge = {
+        pub file_id : String,
+        pub access_type : AccessType,
+        pub expiration_date : Int,
+    }
+
+    #[derive(CandidType, Default, Deserialize)]
+    pub struct InitEncryption = {
+        pub key : String,
+        algo : String,
+        blob_metadata : Vec<u8>
+    }
+
+
+}
+
+mod user {
+    use super::*;
+
+    
+
+
 }
 
 
