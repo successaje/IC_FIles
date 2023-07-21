@@ -18,10 +18,10 @@ shared (msg) actor class icfiles (){
     _Users.logIn(caller);
   };
 
-  public shared ({caller}) func  __init__(userName : Text, name : Text, email : Text) : async Result.Result<Text, Text>{
+  public shared ({caller}) func  Init_Profile(userName : Text, name : Text, email : Text) : async Result.Result<Text, Text>{
     _Users.__init__(caller, userName, name, email);
   };
-  
+
   // public func 
 
 };
