@@ -12,6 +12,7 @@ module {
         email   : Text;
         createdAt : Int;
         access_priviledges : [Text];
+        updated : Bool;
     };
 
 //     module {
