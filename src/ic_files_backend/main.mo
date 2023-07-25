@@ -22,6 +22,14 @@ shared (msg) actor class icfiles (){
     _Users.__init__(caller, userName, name, email);
   };
 
+  public shared ({caller}) func Update_Username(userName : Text) : async Result.Result<Text, Text>{
+    _Users.updateProfile__userName(caller, userName);
+  };
+
+  public shared ({caller}) func Update_Email(email : Text) : async Result.Result<Text, Text>{
+    _Users.updateProfile__email(caller, email);
+  };
+
   // public func 
 
 };

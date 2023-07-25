@@ -133,11 +133,14 @@ module {
                             updated = true;
                         };
                         let updated = Profile__hash__.replace(caller, updatedProfile);
-                        return #ok("successfully changed your username");
+                        return #ok("You have successfully changed your email");
                     };
                 };
             }
         };
+
+
+        
 
 
     };
