@@ -24,6 +24,16 @@ module {
             }
         };
 
+        public func postStable(_profileEntries : [(Principal, Types.Profile__init__)]) {
+            Profile__hash__ := HashMap.fromIter<Principal, Types.Profile__init__>(Profile__backup__.vals(), 10, Principal.equal, Principal.hash);    
+        };
+
+        public func _restore(backup : Types.LocalStableState) : () {
+            Profile__backup__          := backup.Profile__backup__;
+        };
+
+        _restore(state);
+
         public func logIn(caller : Principal) : Bool {
             var state = Profile__hash__.get(caller);
             switch (state) {
