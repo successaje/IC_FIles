@@ -2,7 +2,7 @@ import Int "mo:base/Int";
 module {
 
     public type State = {
-         Profile__backup__ : [(Principal, Profile__init__)];
+        //  Profile__backup__ : [(Principal, Profile__init__)];
     };
 
     public type LocalStableState = {

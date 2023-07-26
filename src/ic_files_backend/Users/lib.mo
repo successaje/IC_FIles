@@ -32,7 +32,7 @@ module {
             Profile__backup__          := backup.Profile__backup__;
         };
 
-        _restore(state);
+        // _restore(state);
 
         public func logIn(caller : Principal) : Bool {
             var state = Profile__hash__.get(caller);
