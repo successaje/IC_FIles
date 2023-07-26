@@ -114,6 +114,7 @@ module {
                 };
             }
         };
+        
 
         public func updateProfile__email(caller : Principal, _email : Text) : Result.Result<Text, Text>{
             if (Verifier__(_email) == false){
@@ -140,7 +141,7 @@ module {
         };
 
 
-        
+
 
 
     };
