@@ -2,6 +2,7 @@ import Types "types";
 
 import HashMap "mo:base/HashMap";
 import Int "mo:base/Int";
+import Iter "mo:base/Iter";
 import Principal "mo:base/Principal";
 import Nat "mo:base/Nat";
 import Result "mo:base/Result";
@@ -15,6 +16,13 @@ module {
 
         var Profile__backup__ : [(Principal, Types.Profile__init__)] = [];
         var Profile__hash__ : HashMap.HashMap<Principal, Types.Profile__init__> = HashMap.fromIter<Principal, Types.Profile__init__>(Profile__backup__.vals(), 10, Principal.equal, Principal.hash);
+
+        public func toStable() : Types.LocalStableState{
+            Profile__backup__ := Iter.toArray(Profile__hash__.entries());
+            {
+                Profile__backup__ = Iter.toArray(Profile__hash__.entries());
+            }
+        };
 
         public func logIn(caller : Principal) : Bool {
             var state = Profile__hash__.get(caller);
@@ -114,7 +122,7 @@ module {
                 };
             }
         };
-        
+
 
         public func updateProfile__email(caller : Principal, _email : Text) : Result.Result<Text, Text>{
             if (Verifier__(_email) == false){
