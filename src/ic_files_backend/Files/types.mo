@@ -5,6 +5,10 @@ module{
         
     };
 
+    public type LocalStableState = {
+        File__Init__Backup : [()];
+    };
+
     public type User = Text;
 
     public type InitFile = {
@@ -42,6 +46,6 @@ module{
         fileHash : Text;
     };
 
-    
+
 
 }
