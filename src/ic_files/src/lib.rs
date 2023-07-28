@@ -1,6 +1,11 @@
 use ic_cdk_macros::*;
+use ic_cdk::api::{caller as _caller};
 use ic_cdk::export::candid::{candid_method, CandidType, Deserialize, Int, Nat};
+use ic_cdk::storage;
 use ic_cdk::export::Principal;
+use serde::{Deserialize, Serialize};
+
+
 #[import(canister = "ic_files_backend")]
 
 use std::collections::{HashMap, HashSet};
@@ -80,10 +85,29 @@ mod types {
 
 }
 
+fn caller() -> Principal {
+    let caller = _caller();
+    if caller == Principal::anonymous() {
+        panic!("Anonymous principal not allowed to make calls.")
+    }
+    caller
+}
+
+
+#[init]
+fn init() {}
+
+
+
+#[update(name = "whoami")]
+fn whoami() -> String {
+    caller
+}
+
 mod user {
     use super::*;
 
-    
+
 
 
 }
