@@ -10,8 +10,10 @@ shared (msg) actor class icfiles (){
     msg.caller;
   };
 
+  private stable var Stabled__Profile : [(Principal, UsersTypes.Profile__init__)] = [];
+
   let _Users = Users.User({
-      
+    Profile__backup__ = Stabled__Profile;
   });
 
   public shared ({caller}) func logIn() : async Bool {
@@ -31,5 +33,12 @@ shared (msg) actor class icfiles (){
   };
 
   // public func 
+
+  system func preupgrade(){
+
+    let { Profile__backup__ } = _Users.toStable();
+    Stabled__Profile := Profile__backup__;
+
+  };
 
 };

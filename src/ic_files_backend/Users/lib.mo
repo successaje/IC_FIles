@@ -19,8 +19,8 @@ module {
 
         public func toStable() : Types.LocalStableState{
             Profile__backup__ := Iter.toArray(Profile__hash__.entries());
-            {
-                Profile__backup__ = Iter.toArray(Profile__hash__.entries());
+            return {
+                Profile__backup__;
             }
         };
 
@@ -44,7 +44,6 @@ module {
                     return true;
                 };
             };
-
         };
 
         private func Verifier(userName : Text, email : Text) : Bool {
