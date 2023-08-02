@@ -58,7 +58,7 @@ mod types {
         pub file_size : Nat,
         pub created_at : Int,
         pub file_hash : String,
-    }
+    };
 
     pub type User = String;
 
@@ -73,14 +73,14 @@ mod types {
         pub file_id : String,
         pub access_type : AccessType,
         pub expiration_date : Int,
-    }
+    };
 
     #[derive(CandidType, Default, Deserialize)]
     pub struct InitEncryption = {
         pub key : String,
         algo : String,
         blob_metadata : Vec<u8>
-    }
+    };
 
 
 }
