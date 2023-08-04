@@ -6,6 +6,6 @@ module {
         metadata : Blob;
     };
 
-
+    // public type 
 
 }
