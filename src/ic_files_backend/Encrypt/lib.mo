@@ -1,7 +1,7 @@
 import Types "types"; 
 
 module {
-    public class Encrypt(){
+    public class Encrypt(state : Types.State){
 
     }
 }

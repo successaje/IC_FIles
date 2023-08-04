@@ -1,3 +1,4 @@
+import Principal "mo:base/Principal";
 module {
 
     public type Encrypt__init__ = {
@@ -6,6 +7,8 @@ module {
         metadata : Blob;
     };
 
-    // public type 
+    public type State = {
+        canister : Principal;
+    }
 
 }
