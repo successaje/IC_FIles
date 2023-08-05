@@ -32,6 +32,10 @@ shared (msg) actor class icfiles (){
     _Users.updateProfile__email(caller, email);
   };
 
+  public shared ({caller}) func Fetch_All_Users() : async [(Principal, UsersTypes.Profile__init__)] {
+    _Users.fetchAllUsers();
+  };
+
   // public func 
 
   system func preupgrade(){

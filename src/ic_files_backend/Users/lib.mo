@@ -46,6 +46,10 @@ module {
             };
         };
 
+        public func fetchAllUsers() : [(Principal, Types.Profile__init__)] {
+            Iter.toArray(Profile__hash__.entries());
+        };
+
         private func Verifier(userName : Text, email : Text) : Bool {
             var unique = true;
             for ((i, j) in Profile__hash__.entries()) {
