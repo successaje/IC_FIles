@@ -23,6 +23,7 @@ module{
         sharedWith : [User];
         encrypted : Bool;
         accessible : AccessType;
+        createdAt : Int;
     };
 
     public type AccessType = {
