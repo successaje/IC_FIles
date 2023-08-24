@@ -1,6 +1,6 @@
 import Principal "mo:base/Principal";
 import Result "mo:base/Result";
-
+import Hash "mo:base/Hash";
 import Users "Users";
 import UsersTypes "Users/types"
 
