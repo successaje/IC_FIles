@@ -9,12 +9,15 @@ module {
         // }
 
         //file name is the title of the file
-        private func init(name : Text, owner : Principal, user : Text, fileSize : Nat,  fileType : Text, folder : Text, editable : Bool, sharedWith : [User], encrypted : Bool, accessible : Types.AccessType) : Types.InitFile {
+        private func init(name : Text, owner : Principal, user : Text, fileSize : Nat,  fileType : Text, folder : Text,edited : Bool, editable : Bool, sharedWith : [Types. User], encrypted : Bool, accessible : Types.AccessType, createdAt : Int) : Types.InitFile {
             {
-                  name; owner; user; fileSize; fileType; folder; false; editable; sharedWith; true; accessible;
+                name; owner; user; fileSize; fileType; folder; edited; editable; sharedWith; encrypted; accessible; createdAt;
             }
         };
+
         
+        
+        // public func 
 
         public func Create_File(init : Types.InitFile) : () {
 
@@ -22,7 +25,7 @@ module {
 
         public func Upload_File() : () {
 
-        };
+        }; 
 
-    }
+       }
 };
