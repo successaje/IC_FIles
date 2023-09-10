@@ -1,12 +1,21 @@
+import HashMap "mo:base/HashMap";
+import Principal "mo:base/Principal";
+import Time "mo:base/Time";
+import TrieMap "mo:base/TrieMap";
+
 import Types "types";
 
 module {
 
-    public class Handler(state : Types.State){
+    public class file(state : Types.State){
 
         // public func toStable() : Types.LocalStableState{
             
         // }
+
+        var FileUploads : [(Principal, Types.InitFile)] = [];
+
+        var FileHashMap : HashMap.HashMap<Principal, Types.InitFile> = HashMap.fromIter<Principal, Types.InitFile>(FileUploads.vals(), 10, Principal.equal, Principal.hash);
 
         public var filePK : Nat = 0;
 
@@ -29,13 +38,18 @@ module {
 
         };
 
-        public func Upload_File() : () {
-
+        public func Upload_File(caller : Principal, file : Types.InitFile) : () {
+            switch(state._Users.GetUser(caller)){
+                case(null){};
+                case(?_){
+                    FileHashMap.put(caller, file);
+                };
+            };
         };
 
         public func Upload_Contract() : (){
 
         };
 
-       }
+    }
 };

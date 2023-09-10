@@ -2,7 +2,9 @@ import Principal "mo:base/Principal";
 import Result "mo:base/Result";
 import Hash "mo:base/Hash";
 import Users "Users";
-import UsersTypes "Users/types"
+import UsersTypes "Users/types";
+import Files "Files";
+import FilesTypes "FIles/types";
 
 shared (msg) actor class icfiles (){
   
@@ -37,6 +39,8 @@ shared (msg) actor class icfiles (){
   };
 
   // public func 
+
+  let file = 
 
   system func preupgrade(){
 
