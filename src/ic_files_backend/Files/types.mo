@@ -1,8 +1,9 @@
+import Users "../Users";
 module{
 
     public type State = {
         caller : Principal;
-        
+        _Users : Users.User;
     };
 
     public type LocalStableState = {

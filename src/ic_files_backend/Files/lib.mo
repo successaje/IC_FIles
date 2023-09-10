@@ -8,6 +8,8 @@ module {
             
         // }
 
+        public var filePK : Nat = 0;
+
         //file name is the title of the file
         private func init(name : Text, owner : Principal, user : Text, fileSize : Nat,  fileType : Text, folder : Text,edited : Bool, editable : Bool, sharedWith : [Types. User], encrypted : Bool, accessible : Types.AccessType, createdAt : Int) : Types.InitFile {
             {
@@ -23,9 +25,17 @@ module {
 
         };
 
+        public func Create_Folder() : (){
+
+        };
+
         public func Upload_File() : () {
 
-        }; 
+        };
+
+        public func Upload_Contract() : (){
+
+        };
 
        }
 };
