@@ -7,7 +7,7 @@ import Types "types";
 
 module {
 
-    public class file(state : Types.State){
+    public class files(state : Types.State){
 
         // public func toStable() : Types.LocalStableState{
             

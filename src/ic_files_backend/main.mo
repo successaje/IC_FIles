@@ -4,13 +4,13 @@ import Hash "mo:base/Hash";
 import Users "Users";
 import UsersTypes "Users/types";
 import Files "Files";
-import FilesTypes "FIles/types";
+import FilesTypes "Files/types";
 
-shared (msg) actor class icfiles (){
+shared ({caller}) actor class icfiles (identity : Principal) = this {
   
-  public query func whoami() : async Principal {
-    msg.caller;
-  };
+  // public query func whoami() : async Principal {
+  //   install.caller;
+  // };
 
   private stable var Stabled__Profile : [(Principal, UsersTypes.Profile__init__)] = [];
 
@@ -40,7 +40,10 @@ shared (msg) actor class icfiles (){
 
   // public func 
 
-  let file = 
+  let file = Files.files({
+    _Users;
+    identity;
+  });
 
   system func preupgrade(){
 
