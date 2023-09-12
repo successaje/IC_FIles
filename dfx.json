@@ -2,7 +2,8 @@
   "canisters": {
     "ic_files_backend": {
       "main": "src/ic_files_backend/main.mo",
-      "type": "motoko"
+      "type": "motoko",
+      "optimize": "cycles"
     },
     "ic_files_frontend": {
       "dependencies": [

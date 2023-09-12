@@ -24,6 +24,13 @@ module {
             }
         };
 
+    //     let IC = actor "aaaaa-aa" : actor {
+
+    //   create_canister : {
+    //       // richer in ic.did
+    //     } -> async { canister_id : Principal };
+
+
         public func postStable(_profileEntries : [(Principal, Types.Profile__init__)]) {
             Profile__hash__ := HashMap.fromIter<Principal, Types.Profile__init__>(Profile__backup__.vals(), 10, Principal.equal, Principal.hash);    
         };

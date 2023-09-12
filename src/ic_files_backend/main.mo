@@ -6,11 +6,28 @@ import UsersTypes "Users/types";
 import Files "Files";
 import FilesTypes "Files/types";
 
-shared ({caller}) actor class icfiles (identity : Principal) = this {
+shared ({caller}) actor class icfiles () = this {
+
+  let nexiCanister = actor("aol7b-vqaaa-aaaak-aepsq-cai") : actor {
+    CheckPrincipal : shared () -> async Principal;
+    createCompany : shared (Text, Text) -> async Bool;
+    createQCard : shared (Text, Text) -> async ();
+    greet : shared Text -> async Text;
+  };
   
+
+
   // public query func whoami() : async Principal {
   //   install.caller;
   // };
+
+  public shared ({caller}) func Test(a : Text, b : Text) : async Bool {
+    await nexiCanister.createCompany(a, b);
+  };
+
+  public shared ({caller}) func Test1(name : Text) : async Text {
+    await nexiCanister.greet(name);
+  };
 
   private stable var Stabled__Profile : [(Principal, UsersTypes.Profile__init__)] = [];
 
@@ -40,10 +57,10 @@ shared ({caller}) actor class icfiles (identity : Principal) = this {
 
   // public func 
 
-  let file = Files.files({
-    _Users;
-    identity;
-  });
+  // let file = Files.files({
+  //   _Users;
+  //   identity;
+  // });
 
   system func preupgrade(){
 
