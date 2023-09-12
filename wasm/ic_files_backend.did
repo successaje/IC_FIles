@@ -1,0 +1,29 @@
+type icfiles = 
+ service {
+   Fetch_All_Users: () -> (vec record {
+                                 principal;
+                                 Profile__init__;
+                               });
+   Init_Profile: (text, text, text) -> (Result);
+   Test: (text, text) -> (bool);
+   Test1: (text) -> (text);
+   Update_Email: (text) -> (Result);
+   Update_Username: (text) -> (Result);
+   logIn: () -> (bool);
+ };
+type Result = 
+ variant {
+   err: text;
+   ok: text;
+ };
+type Profile__init__ = 
+ record {
+   access_priviledges: vec text;
+   createdAt: int;
+   email: text;
+   identity: principal;
+   name: text;
+   updated: bool;
+   userName: text;
+ };
+service : () -> icfiles
