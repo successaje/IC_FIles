@@ -38,13 +38,14 @@ module {
 
         };
 
-        public func Upload_File(caller : Principal, file : Types.InitFile) : () {
+        public func Upload_File(caller : Principal, file : Types.InitFile) : async Text {
             switch(state._Users.GetUser(caller)){
                 case(null){};
                 case(?_){
                     FileHashMap.put(caller, file);
                 };
             };
+            return "You have successfully uploaded the File";
         };
 
         public func Upload_Contract() : (){

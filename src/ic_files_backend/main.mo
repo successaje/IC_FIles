@@ -60,6 +60,10 @@ shared ({caller}) actor class icfiles () = this {
     caller;
   });
 
+  public shared ({caller}) func  Upload_File(file : FilesTypes.InitFile) : async Text {
+    await _Files.Upload_File(caller, file);
+  };
+
   // public func 
 
   // let file = Files.files({
