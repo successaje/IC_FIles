@@ -1,20 +1,27 @@
 import { ic_files_backend } from "../../declarations/ic_files_backend";
-import React from "react";
+// import React from "react";
+// import ReactDOM from "react-dom/client"
 
-document.querySelector("form").addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const button = e.target.querySelector("button");
+// const myFirstElement = <h1>Hello React</h1>
 
-  const name = document.getElementById("name").value.toString();
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(myFirstElement);
 
-  button.setAttribute("disabled", true);
 
-  // Interact with foo actor, calling the greet method
-  const greeting = await ic_files_backend.greet(name);
+// // document.querySelector("form").addEventListener("submit", async (e) => {
+// //   e.preventDefault();
+// //   const button = e.target.querySelector("button");
 
-  button.removeAttribute("disabled");
+// //   const name = document.getElementById("name").value.toString();
 
-  document.getElementById("greeting").innerText = greeting;
+// //   button.setAttribute("disabled", true);
 
-  return false;
-});
+// //   // Interact with foo actor, calling the greet method
+// //   const greeting = await ic_files_backend.greet(name);
+
+// //   button.removeAttribute("disabled");
+
+// //   document.getElementById("greeting").innerText = greeting;
+
+// //   return false;
+// // });

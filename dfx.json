@@ -5,13 +5,16 @@
       "type": "motoko",
       "optimize": "cycles"
     },
+    
     "ic_files_frontend": {
       "dependencies": [
-        "ic_files_backend"
+        "ic_files_backend",
+        "nexai"
       ],
       "frontend": {
         "entrypoint": "src/ic_files_frontend/src/index.html"
       },
+     
       "source": [
         "src/ic_files_frontend/assets",
         "dist/ic_files_frontend/"

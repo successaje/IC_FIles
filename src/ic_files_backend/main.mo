@@ -55,6 +55,11 @@ shared ({caller}) actor class icfiles () = this {
     _Users.fetchAllUsers();
   };
 
+  let _Files  = Files.files({
+    _Users;
+    caller;
+  });
+
   // public func 
 
   // let file = Files.files({

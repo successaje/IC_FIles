@@ -2,7 +2,7 @@ import Users "../Users";
 module{
 
     public type State = {
-        identity : Principal;
+        caller : Principal;
         _Users : Users.User;
     };
 
