@@ -1,3 +1,4 @@
+import Buffer "mo:base/Buffer";
 import HashMap "mo:base/HashMap";
 import Principal "mo:base/Principal";
 import Time "mo:base/Time";
@@ -46,6 +47,16 @@ module {
                 };
             };
             return "You have successfully uploaded the File";
+        };
+
+        public func Getfiles(caller : Principal) : async [Types.InitFile] {
+            var buffer = Buffer.Buffer<Types.InitFile>(0);
+            for ((principal, file) in FileHashMap.entries()){
+                if (principal == caller) {
+                    buffer.add(file);
+                };
+            };
+            return buffer.toArray();
         };
 
         public func Upload_Contract() : (){

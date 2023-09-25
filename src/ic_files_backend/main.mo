@@ -64,6 +64,10 @@ shared ({caller}) actor class icfiles () = this {
     await _Files.Upload_File(caller, file);
   };
 
+  public shared ({caller}) func GetMyFiles() : async [FilesTypes.InitFile] {
+    await _Files.Getfiles(caller);
+  };
+
   // public func 
 
   // let file = Files.files({
