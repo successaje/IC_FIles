@@ -1,0 +1,25 @@
+ "nexai" : {
+      "type" : "custom",
+      "candid" : "https://github.com/Nexai-app/nexi-v1/releases/download/latest/external.did",
+      "wasm" : "https://github.com/Nexai-app/nexi-v1/releases/download/latest/external.wasm",
+      "remote" : {
+          "id" : {
+              "ic" : "ouyx4-nyaaa-aaaag-qclkq-cai"
+          }
+      }
+    },
+
+    "nex" : {
+      "type": "pull",
+      "id" : "ouyx4-nyaaa-aaaag-qclkq-cai"
+    },
+
+    "nexa" : {
+      "type": "pull",
+      "id" : "aol7b-vqaaa-aaaak-aepsq-cai"
+    },
+
+    "vdb" : {
+      "type" : "pull",
+      "id" : "fnnlb-hqaaa-aaaao-a2igq-cai"
+    },

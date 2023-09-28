@@ -1,0 +1,7 @@
+type Result = variant { Ok; Err : text };
+type Result_1 = variant { Ok : vec record { float32; text }; Err : text };
+service : { 
+    "append_keys_values" : (vec vec float32, vec text) -> (Result);
+    "build_index" : () -> (Result);
+   "query" : (vec float32, int32) -> (Result_1) query;
+}

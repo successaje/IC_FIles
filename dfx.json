@@ -3,13 +3,16 @@
     "ic_files_backend": {
       "main": "src/ic_files_backend/main.mo",
       "type": "motoko",
-      "optimize": "cycles"
+      "optimize": "cycles",
+      "dependencies": [
+      ]
     },
+
+   
     
     "ic_files_frontend": {
       "dependencies": [
-        "ic_files_backend",
-        "nexai"
+        "ic_files_backend"
       ],
       "frontend": {
         "entrypoint": "src/ic_files_frontend/src/index.tsx"
