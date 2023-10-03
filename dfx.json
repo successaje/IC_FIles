@@ -8,7 +8,20 @@
       ]
     },
 
-   
+    "external" : {
+      "type": "pull",
+      "id" : "ouyx4-nyaaa-aaaag-qclkq-cai"
+    },
+
+    "nexai" : {
+      "type": "pull",
+      "id" : "aol7b-vqaaa-aaaak-aepsq-cai"
+    },
+
+    "vdb" : {
+      "type" : "pull",
+      "id" : "fnnlb-hqaaa-aaaao-a2igq-cai"
+    },
     
     "ic_files_frontend": {
       "dependencies": [

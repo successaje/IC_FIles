@@ -1,7 +1,7 @@
 {
   "canisters": {
     "ouyx4-nyaaa-aaaag-qclkq-cai": {
-      "name": "nex",
+      "name": "external",
       "dependencies": [
         "aol7b-vqaaa-aaaak-aepsq-cai"
       ],
@@ -11,6 +11,7 @@
       "gzip": false
     },
     "aol7b-vqaaa-aaaak-aepsq-cai": {
+      "name": "nexai",
       "wasm_hash": "8a6d3566686d223960197143eb44fc1f1aeacce382115e7d884fb21ed62dc77d",
       "init_guide": "null",
       "candid_args": "()",
@@ -18,7 +19,7 @@
     },
     "fnnlb-hqaaa-aaaao-a2igq-cai": {
       "name": "vdb",
-      "wasm_hash": "bef1e3dc431e92ded121f1b1f3c9db189b807ec3a44930395060e11c9a99db16",
+      "wasm_hash": "6a601d8df92f6fedc413f8f09dbefebadc74f398229745714b96a9914386fdc2",
       "init_guide": "null",
       "candid_args": "()",
       "gzip": false

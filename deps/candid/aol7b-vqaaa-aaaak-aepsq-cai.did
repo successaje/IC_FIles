@@ -1,0 +1,61 @@
+type Result_2 = 
+ variant {
+   Err: text;
+   Ok: nat32;
+ };
+type Result_1 = 
+ variant {
+   Err: text;
+   Ok: vec record {
+             float64;
+             text;
+           };
+ };
+type Result = 
+ variant {
+   Err: text;
+   Ok;
+ };
+type FloatVector = vec float64;
+type FloatMatrix = vec FloatVector;
+type CompanyEntry__1 = 
+ record {
+   createdAt: int;
+   description: text;
+   email: text;
+   name: text;
+   vdbId: nat32;
+ };
+type CompanyEntry = 
+ record {
+   createdAt: int;
+   description: text;
+   email: text;
+   name: text;
+   vdbId: nat32;
+ };
+type CardEntry = 
+ record {
+   answer: text;
+   question: text;
+   vdbId: nat32;
+ };
+service : {
+  CheckPrincipal: () -> (principal);
+  VDBAddQandA: (nat32, FloatMatrix, vec text) -> (Result);
+  VDBBuildIndex: (nat32) -> (Result);
+  VDBGetSimilar: (nat32, FloatVector, int32) -> (Result_1);
+  VDBRegister: (text) -> (Result_2);
+  createCompany: (text, text, text, nat32) -> (opt CompanyEntry);
+  createQCard: (text, text, FloatMatrix, vec text) -> ();
+  getAllCompanies: () -> (vec record {
+                                principal;
+                                CompanyEntry__1;
+                              });
+  getAllQCards: (nat32) -> (opt vec CardEntry) query;
+  getAnAnswer: (nat) -> (opt CardEntry);
+  getCompanyProfile: () -> (opt CompanyEntry) query;
+  greet: (text) -> (text);
+  logIn: () -> (bool) query;
+  makeManager: () -> (bool);
+}
