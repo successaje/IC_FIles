@@ -144,29 +144,29 @@ module {
         };
 
 
-        public func updateProfile__email(caller : Principal, _email : Text) : Result.Result<Text, Text>{
-            if (Verifier__(_email) == false){
-                #err("This username or email exists!")
-            } else {
-                var profile = GetUser(caller);
-                switch(profile) {
-                    case(null) { #ok("") };
-                    case(?profile) { 
-                        var updatedProfile = {
-                            identity = profile.identity;
-                            userName = profile.userName;
-                            name = profile.name;
-                            email = _email;
-                            createdAt = profile.createdAt;
-                            access_priviledges = profile.access_priviledges;
-                            updated = true;
-                        };
-                        let updated = Profile__hash__.replace(caller, updatedProfile);
-                        return #ok("You have successfully changed your email");
-                    };
-                };
-            }
-        };
+        // public func updateProfile__email(caller : Principal, _email : Text) : Result.Result<Text, Text>{
+        //     if (Verifier__(_email) == false){
+        //         #err("This username or email exists!")
+        //     } else {
+        //         var profile = GetUser(caller);
+        //         switch(profile) {
+        //             case(null) { #ok("") };
+        //             case(?profile) { 
+        //                 var updatedProfile = {
+        //                     identity = profile.identity;
+        //                     userName = profile.userName;
+        //                     name = profile.name;
+        //                     email = _email;
+        //                     createdAt = profile.createdAt;
+        //                     access_priviledges = profile.access_priviledges;
+        //                     updated = true;
+        //                 };
+        //                 let updated = Profile__hash__.replace(caller, updatedProfile);
+        //                 return #ok("You have successfully changed your email");
+        //             };
+        //         };
+        //     }
+        // };
 
 
 
