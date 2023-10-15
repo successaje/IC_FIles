@@ -5,21 +5,24 @@
       "dependencies": [
         "aol7b-vqaaa-aaaak-aepsq-cai"
       ],
-      "wasm_hash": "3fc1407f066b091272496a96e01e0580fb5b63091b6747ab321f5e1a7f2aef2d",
+      "wasm_hash": "4331dc03f6fcb72f5b2317e9c7bea790c5274d3dfa59a49c82770452b8a6f64f",
       "init_guide": "null",
       "candid_args": "()",
       "gzip": false
     },
     "aol7b-vqaaa-aaaak-aepsq-cai": {
       "name": "nexai",
-      "wasm_hash": "8a6d3566686d223960197143eb44fc1f1aeacce382115e7d884fb21ed62dc77d",
+      "dependencies": [
+        "fnnlb-hqaaa-aaaao-a2igq-cai"
+      ],
+      "wasm_hash": "495e4dd5bdac537c0e16445af43b8a804d0b7f26082e513af4d688255c1ff04e",
       "init_guide": "null",
       "candid_args": "()",
       "gzip": false
     },
     "fnnlb-hqaaa-aaaao-a2igq-cai": {
       "name": "vdb",
-      "wasm_hash": "6a601d8df92f6fedc413f8f09dbefebadc74f398229745714b96a9914386fdc2",
+      "wasm_hash": "6bab10fc18a6e69ba557158bf64964e5d432aa31c8485aeeb54e504247956df1",
       "init_guide": "null",
       "candid_args": "()",
       "gzip": false

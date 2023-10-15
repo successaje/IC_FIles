@@ -11,6 +11,11 @@ type Result_1 =
              text;
            };
  };
+type Result = 
+ variant {
+   Err: text;
+   Ok;
+ };
 type HttpResponsePayload = 
  record {
    body: vec nat8;
@@ -22,6 +27,7 @@ type HttpHeader =
    name: text;
    value: text;
  };
+type FloatVector = vec float64;
 type CanisterHttpResponsePayload = 
  record {
    body: vec nat8;
@@ -29,7 +35,9 @@ type CanisterHttpResponsePayload =
    status: nat;
  };
 service : {
+  ExternalVDBGetSimilar: (nat32, FloatVector, int32) -> (Result_1);
   Greet: (text) -> (text);
+  VDBBuildIndex: (nat32) -> (Result);
   VDBGetSimilar: (nat32, vec float64, int32) -> (Result_1);
   send_http_post_request: () -> (text);
   test: (nat) -> (nat);
