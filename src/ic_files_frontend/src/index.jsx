@@ -1,15 +1,27 @@
 import { ic_files_backend } from "../../declarations/ic_files_backend";
 import * as React from "react";
 import { render } from "react-dom"
+import "../assets/main.css";
 
 const MyHello = () => {
   const [name, setName] = React.useState('');
   const [message, setMessage] = React.useState('');
+  const [userName, setUserName] = React.useState('');
+  const [email, setEmail] = React.useState('');
 
-  async function doGreet() {
-    const greeting = await ic_files_backend.greet(name);
-    setMessage(greeting);
-}
+
+  // async function doGreet() {
+  //   const greeting = await ic_files_backend.greet(name);
+  //   setMessage(greeting);
+  // }
+
+  async function doCreateProfile() {
+    let name = document.getElementById("newEntryName").value;
+    let userName = document.getElementById("newEntryUserName").value;
+    let email = document.getElementById("newEntryEmail").value;
+    const profile = await ic_files_backend.Init_Profile(userName, name, email)
+    console.log(profile);
+  }
 
 return (
   <div style={{ "fontSize": "30px" }}>
@@ -27,8 +39,11 @@ return (
         value={name}
         onChange={(ev) => setName(ev.target.value)}
       ></input>
+      {/* <input
+        id= */}
       <button onClick={doGreet}>Get Greeting!</button>
     </div>
+
     <div>
       Greeting is: "
       <span style={{ color: "blue" }}>{message}</span>"
