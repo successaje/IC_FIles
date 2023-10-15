@@ -1,5 +1,6 @@
 import styled from "styled-components"
-
+import React from "react";
+import logo from "../../assets/iclogo.png"
 const HeaderContainer = styled.div`
     display : grid;
     grid-template-columns : 300px auto 200px;
@@ -34,6 +35,8 @@ const Header = () => {
     return (
         <div className="header">
             <div className="header__logo"></div>
+                <img src={logo} alt=""/>
+                <span>ICFiles</span>
             <div className="header_searchContainer"></div>
             <div className="header__icon"></div>    
             Header

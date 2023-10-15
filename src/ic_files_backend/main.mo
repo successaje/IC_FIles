@@ -43,6 +43,10 @@ shared ({caller}) actor class icfiles () = this {
     _Users.__init__(caller, userName, name, email);
   };
 
+  public func greet(name : Text) : async Text{
+    return "How are you, " # name;
+  };
+
   public shared ({caller}) func Update_Username(userName : Text) : async Result.Result<Text, Text>{
     _Users.updateProfile__userName(caller, userName);
   };
