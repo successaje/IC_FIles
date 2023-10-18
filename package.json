@@ -20,9 +20,15 @@
     "@dfinity/agent": "^0.17.0",
     "@dfinity/candid": "^0.17.0",
     "@dfinity/principal": "^0.17.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.14",
+    "@react-icons/all-files": "^4.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "^6.1.0"
+    "react-icons": "^4.11.0",
+    "styled-components": "^6.1.0",
+    "url-loader": "^4.1.1"
   },
   "devDependencies": {
     "assert": "2.0.0",
@@ -31,6 +37,7 @@
     "css-loader": "^6.8.1",
     "dotenv": "^16.0.3",
     "events": "3.3.0",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "5.5.0",
     "process": "0.11.10",
     "stream-browserify": "3.0.0",

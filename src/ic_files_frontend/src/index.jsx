@@ -1,7 +1,11 @@
 import { ic_files_backend } from "../../declarations/ic_files_backend";
 import * as React from "react";
 import { render } from "react-dom"
+import Header from "./components/header";
+import SideBar from "./components/dashbord/SideBar";
+
 import "../assets/main.css";
+// import 
 
 const MyHello = () => {
   const [name, setName] = React.useState('');
@@ -10,10 +14,10 @@ const MyHello = () => {
   const [email, setEmail] = React.useState('');
 
 
-  // async function doGreet() {
-  //   const greeting = await ic_files_backend.greet(name);
-  //   setMessage(greeting);
-  // }
+  async function doGreet() {
+    const greeting = await ic_files_backend.greet(name);
+    setMessage(greeting);
+  }
 
   async function doCreateProfile() {
     let name = document.getElementById("newEntryName").value;
@@ -24,15 +28,25 @@ const MyHello = () => {
   }
 
 return (
+
+
   <div style={{ "fontSize": "30px" }}>
-    <div style={{ "backgroundColor": "yellow" }}>
+  <Header />
+  {/* Header */}
+  {/*auth == true
+      sidebar
+      filesView
+      sideicons
+   */}
+
+    
+      {/* <SideBar /> */}
       <p>Greetings, from ICFiles!</p>
       <p>
         {" "}
         Type your message in the Name input field, then click{" "}
         <b> Get Greeting</b> to display the result.
       </p>
-    </div>
     <div style={{ margin: "30px" }}>
       <input
         id="name"

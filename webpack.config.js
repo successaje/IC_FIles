@@ -44,11 +44,42 @@ module.exports = {
   // webpack configuration. For example, if you are using React
   // modules and CSS as described in the "Adding a stylesheet"
   // tutorial, uncomment the following lines:
+  // module: {
+  //  rules: [
+  //    { test: /\.(ts|tsx|jsx)$/, loader: "ts-loader" },
+  //   //  { test: /\.(js|\.jsx)$/, loader : "js-loader" },
+  //    { test: /\.css$/, use: ['style-loader','css-loader'] } //"sass-loader" or 
+  //  ]
+  // },
+
   module: {
-   rules: [
-     { test: /\.(ts|tsx|jsx)$/, loader: "ts-loader" },
-     { test: /\.css$/, use: ['style-loader','css-loader'] } //"sass-loader" or 
-   ]
+    rules: [
+      {
+        test: /\.(ts|tsx|jsx)$/,
+        exclude: /nodeModules/,
+        loader: "ts-loader",
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: "file-loader",
+          },
+        ],
+      },
+      {
+        test: /\.(png|jpg|gif)$/i,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              limit: 8192,
+            },
+          },
+        ],
+      },
+      { test: /\.css$/, use: ["style-loader", "css-loader"] },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({

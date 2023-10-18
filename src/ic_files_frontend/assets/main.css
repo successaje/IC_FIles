@@ -1,4 +1,9 @@
-body {
+*  {
+    margin : 0;
+    /* background-color: #B2B2B2; */
+}
+
+/* body {
     font-family: sans-serif;
     font-size: 1.5rem;
 }
@@ -34,4 +39,4 @@ button[type="submit"] {
 
 #greeting:empty {
     display: none;
-}
+} */

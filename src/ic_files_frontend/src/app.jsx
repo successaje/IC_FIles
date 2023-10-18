@@ -1,7 +1,8 @@
 import React from "react";
-import Header from "./components/header";
+// import Header from "./components/header";
+import SideBar from "./components/dashbord/SideBar";
 
-import "./index.css";
+import ".assets";
 
 function App() {
 
@@ -11,7 +12,10 @@ function App() {
 
     return (
         <div >
-            <Header />
+            <SideBar>
+                <h1>Hi</h1>
+            </SideBar>
+            {/* <Header /> */}
             {/* Header */}
             {/*auth == true
                 sidebar
@@ -19,7 +23,7 @@ function App() {
                 sideicons
              */}
             
-            <h1>ICFiles</h1>
+            {/* <h1>ICFiles</h1> */}
         </div>
     );
 }
