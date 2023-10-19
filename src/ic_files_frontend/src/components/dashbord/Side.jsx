@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const SideBar = () => {
+const Side = () => {
   return (
     <Container>
       <Logo>
@@ -23,7 +23,7 @@ const SideBar = () => {
   );
 };
 
-export default SideBar;
+export default Side;
 
 // const Container = styled.div`
 //    display: flex

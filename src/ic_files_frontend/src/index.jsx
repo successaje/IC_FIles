@@ -2,7 +2,7 @@ import { ic_files_backend } from "../../declarations/ic_files_backend";
 import * as React from "react";
 import { render } from "react-dom"
 import Header from "./components/header";
-import SideBar from "./components/dashbord/SideBar";
+import Sidebar from "./components/Sidebar";
 
 import "../assets/main.css";
 // import 
@@ -28,7 +28,13 @@ const MyHello = () => {
   }
 
 return (
-  <Header />
+  <>
+    <Header />
+    {/* <div className="App">
+      <Sidebar />
+    </div> */}
+  </>
+  
   // <div className="App">
   //   <SideBar />
   // </div>

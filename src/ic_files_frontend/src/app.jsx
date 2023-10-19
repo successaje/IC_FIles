@@ -1,6 +1,6 @@
 import React from "react";
 // import Header from "./components/header";
-import SideBar from "./components/dashbord/SideBar";
+
 
 import ".assets";
 
@@ -8,13 +8,11 @@ function App() {
 
     // Authentication
 
-
-
     return (
         <div >
-            <SideBar>
+            {/* <Sidebar>
                 <h1>Hi</h1>
-            </SideBar>
+            </Sidebar> */}
             {/* <Header /> */}
             {/* Header */}
             {/*auth == true
