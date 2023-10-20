@@ -30,9 +30,9 @@ const MyHello = () => {
 return (
   <>
     <Header />
-    {/* <div className="App">
+    <div className="App">
       <Sidebar />
-    </div> */}
+    </div>
   </>
   
   // <div className="App">

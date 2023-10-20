@@ -13,6 +13,7 @@ module{
     public type User = Text;
 
     public type InitFile = {
+        id  : Nat;
         name : Text;
         owner : Principal;
         user : Text;

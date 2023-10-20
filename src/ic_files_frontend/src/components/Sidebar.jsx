@@ -13,7 +13,7 @@ import { React } from 'react';
 const Sidebar = () => {
 
     return (
-        <>
+        
             <SidebarContainer>
                 <SidebarBtn>
                     <img src="" alt=""/>
@@ -63,7 +63,6 @@ const Sidebar = () => {
                     </div>
                 </SidebarOptions>
             </SidebarContainer>
-        </>
         
     )
 }
