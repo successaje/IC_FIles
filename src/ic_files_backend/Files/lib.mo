@@ -1,5 +1,7 @@
 import Buffer "mo:base/Buffer";
+import Hash "mo:base/Hash";
 import HashMap "mo:base/HashMap";
+import Nat "mo:base/Nat";
 import Principal "mo:base/Principal";
 import Result "mo:base/Result";
 import Time "mo:base/Time";
@@ -15,9 +17,11 @@ module {
             
         // }
 
-        var FileUploads : [(Principal, Types.InitFile)] = [];
+        var PrincipalFileUploads : [(Principal, Types.InitFile)] = [];
+        var FileUploads : [(Nat, Types.InitFile)] = [];
 
-        var FileHashMap : HashMap.HashMap<Principal, Types.InitFile> = HashMap.fromIter<Principal, Types.InitFile>(FileUploads.vals(), 10, Principal.equal, Principal.hash);
+        var FileHashMap : HashMap.HashMap<Nat, Types.InitFile> = HashMap.fromIter<Nat, Types.InitFile>(FileUploads.vals(), 10, Nat.equal, Hash.hash);
+        var PrincipalFileHashMap : HashMap.HashMap<Principal, Types.InitFile> = HashMap.fromIter<Principal, Types.InitFile>(PrincipalFileUploads.vals(), 10, Principal.equal, Principal.hash);
 
         public var id : Nat = 0;
 
@@ -44,7 +48,9 @@ module {
             switch(state._Users.GetUser(caller)){
                 case(null){};
                 case(?_){
-                    FileHashMap.put(caller, file);
+                    PrincipalFileHashMap.put(caller, file);
+                    FileHashMap.put(id, file);
+                    id += 1;
                 };
             };
             return "You have successfully uploaded the File";
