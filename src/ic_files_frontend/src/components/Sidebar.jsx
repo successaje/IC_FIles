@@ -16,9 +16,9 @@ const Sidebar = () => {
         
             <SidebarContainer>
                 <SidebarBtn>
-                    <img src="" alt=""/>
+                    <img src={`add.png`} alt=""/>
                     <span>
-                        Add
+                        Add File
                     </span>
                 </SidebarBtn>
                 <SidebarOptions>
