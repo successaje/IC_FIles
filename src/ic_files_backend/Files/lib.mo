@@ -8,6 +8,7 @@ import Time "mo:base/Time";
 import TrieMap "mo:base/TrieMap";
 
 import Types "types";
+import Users "../Users";
 
 module {
 
@@ -48,7 +49,6 @@ module {
             switch(state._Users.GetUser(caller)){
                 case(null){};
                 case(?_){
-                    PrincipalFileHashMap.put(caller, file);
                     FileHashMap.put(id, file);
                     id += 1;
                 };
@@ -56,13 +56,16 @@ module {
             return "You have successfully uploaded the File";
         };
 
-        // public func deleteFile(caller : Principal, name : Text) : Result.Result<Text, Text>{
+        public func deleteFile(caller : Principal, id : Nat, name : Text) : (){
+            // var user = state._Users.GetUser(caller);
+            FileHashMap.delete(id)
 
-        // };
 
-        public func Getfiles(caller : Principal) : async [Types.InitFile] {
+        };
+
+        public func getAllfiles(caller : Principal) : async [Types.InitFile] {
             var buffer = Buffer.Buffer<Types.InitFile>(0);
-            for ((principal, file) in FileHashMap.entries()){
+            for ((principal, file) in PrincipalFileHashMap.entries()){
                 if (principal == caller) {
                     buffer.add(file);
                 };
@@ -70,11 +73,26 @@ module {
             return buffer.toArray();
         };
 
+        // public func isOwner(caller : Principal, id : Nat) : Bool {
+        //     var file = FileHashMap.get(id);
+        //     switch(file){
+        //         case(null){};
+        //         case(file){
+
+        //         }
+        //     }
+        //     if (file.id == id) {
+        //         return (file.owner == caller);
+        //     }
+        // };
+
+    
 
 
-         public func Upload_Contract() : (){
 
-        };
+        //  public func Upload_Contract() : (){
+
+        // };
 
     }
 };
