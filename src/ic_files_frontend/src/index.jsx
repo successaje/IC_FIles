@@ -3,6 +3,7 @@ import * as React from "react";
 import { render } from "react-dom"
 import Header from "./components/header";
 import Sidebar from "./components/Sidebar";
+import Data from "./components/Data";
 import Side from "./components/dashbord/Side";
 
 import "../assets/main.css";
@@ -33,6 +34,7 @@ return (
     <Header />
     <div className="App">
       <Sidebar />
+      <Data />
     </div>
   </>
   
