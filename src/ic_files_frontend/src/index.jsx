@@ -3,6 +3,7 @@ import * as React from "react";
 import { render } from "react-dom"
 import Header from "./components/header";
 import Sidebar from "./components/Sidebar";
+import Side from "./components/dashbord/Side";
 
 import "../assets/main.css";
 // import 
@@ -30,9 +31,9 @@ const MyHello = () => {
 return (
   <>
     <Header />
-    {/* <div className="App">
+    <div className="App">
       <Sidebar />
-    </div> */}
+    </div>
   </>
   
   // <div className="App">

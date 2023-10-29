@@ -69,7 +69,7 @@ shared ({caller}) actor class icfiles () = this {
   };
 
   public shared ({caller}) func GetMyFiles() : async [FilesTypes.InitFile] {
-    await _Files.Getfiles(caller);
+    await _Files.getAllfiles(caller);
   };
 
   // public func 

@@ -5,14 +5,16 @@ import {MdStarBorder} from "react-icons/md";
 import {MdOutlineDeleteOutline} from "react-icons/md";
 import {MdOutlineCloudQueue} from "react-icons/md";
 import {MdDevices} from "react-icons/md";
+import * as React from "react";
 
 import styled from "styled-components";
 import { Modal } from '@material-ui/core';
-import { React } from 'react';
+
 
 const Sidebar = () => {
 
     return (
+   
         <>
             <SidebarContainer>
                 <SidebarBtn>
