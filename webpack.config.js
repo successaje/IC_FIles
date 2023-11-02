@@ -81,6 +81,7 @@ module.exports = {
       { test: /\.css$/, use: ["style-loader", "css-loader"] },
     ],
   },
+
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, frontend_entry),

@@ -1,31 +1,11 @@
 {
   "canisters": {
-    "ouyx4-nyaaa-aaaag-qclkq-cai": {
-      "name": "external",
-      "dependencies": [
-        "aol7b-vqaaa-aaaak-aepsq-cai"
-      ],
-      "wasm_hash": "4331dc03f6fcb72f5b2317e9c7bea790c5274d3dfa59a49c82770452b8a6f64f",
-      "init_guide": "null",
-      "candid_args": "()",
-      "gzip": false
-    },
-    "aol7b-vqaaa-aaaak-aepsq-cai": {
-      "name": "nexai",
-      "dependencies": [
-        "fnnlb-hqaaa-aaaao-a2igq-cai"
-      ],
-      "wasm_hash": "495e4dd5bdac537c0e16445af43b8a804d0b7f26082e513af4d688255c1ff04e",
-      "init_guide": "null",
-      "candid_args": "()",
-      "gzip": false
-    },
-    "fnnlb-hqaaa-aaaao-a2igq-cai": {
-      "name": "vdb",
-      "wasm_hash": "6bab10fc18a6e69ba557158bf64964e5d432aa31c8485aeeb54e504247956df1",
-      "init_guide": "null",
-      "candid_args": "()",
-      "gzip": false
+    "rdmx6-jaaaa-aaaaa-aaadq-cai": {
+      "name": "internet_identity",
+      "wasm_hash": "09ba980c12ca4fe2b3f6ff6449f9a8452ee168f843c5be8b2316c6db356d18c1",
+      "init_guide": "Use '(null)' for sensible defaults. See the candid interface for more details.",
+      "candid_args": "(opt InternetIdentityInit)",
+      "gzip": true
     }
   }
 }

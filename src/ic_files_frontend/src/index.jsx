@@ -34,7 +34,7 @@ return (
     <Header />
     <div className="App">
       <Sidebar />
-      <Data />
+      {/* <Data /> */}
     </div>
   </>
   
