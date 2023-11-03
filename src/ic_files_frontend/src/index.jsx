@@ -1,5 +1,9 @@
 import { ic_files_backend } from "../../declarations/ic_files_backend";
 import * as React from "react";
+
+import  { creatActor } from "../../declarations/ic_files_backend";
+import { AuthClient } from "@dfinity/auth-client";
+import { HttpAgent } from "@dfinity/agent";
 import { render } from "react-dom"
 import Header from "./components/header";
 import Sidebar from "./components/Sidebar";
