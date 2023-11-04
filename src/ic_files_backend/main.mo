@@ -72,6 +72,10 @@ shared ({caller}) actor class icfiles () = this {
     await _Files.getAllfiles(caller);
   };
 
+  public shared ({caller}) func deleteFile(id : Nat, name : Text) :  async () {
+    _Files.deleteFile(caller, id, name);
+  };
+
   // public func 
 
   // let file = Files.files({
